@@ -2,7 +2,7 @@ import React from 'react';
 
 const List = props => {
 
-    const {items, markAsCompleted, removeTask} = props;
+    const {items, markAsCompleted, markAsUnCompleted, removeTask} = props;
 
     return (
         <ul>
@@ -19,13 +19,13 @@ const List = props => {
                         <div className = 'actions'>
                             <span 
                                 className = {item.complete ? 'hide' : 'done'}
-                                onClick = {() => removeTask(item.id)}
-                            >
-                                <i className="fa fa-check"></i>
-                            </span>
-
-                            <span className = "trash"
                                 onClick = {() => markAsCompleted(item.id)}
+                            >
+                                <i className={item.complete ? 'fa-solid fa-x' : 'fa fa-check'}></i>
+                            </span>
+                          
+                            <span className = "trash"
+                                onClick = {() => removeTask(item.id)}
                             >
                                 <i className="fa fa-trash"></i>
                             </span>

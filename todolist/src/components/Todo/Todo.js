@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import List from './List';
 import {v4 as uuidv4} from 'uuid';
+import { toHaveFormValues } from '@testing-library/jest-dom/dist/matchers';
 
 class Todo extends Component {
     
@@ -13,19 +14,19 @@ class Todo extends Component {
                 {
                     id: uuidv4(),
                     task: 'Estudiar Web',
-                    complete: true,
+                    complete: toHaveFormValues,
                 },
 
                 {
                     id: uuidv4(),
                     task: 'Hacer Tareas',
-                    complete: true,
+                    complete: false,
                 },
 
                 {
                     id: uuidv4(),
                     task: 'Terminar shadow of war',
-                    complete: true,
+                    complete: false,
                 },
                 
             ],
