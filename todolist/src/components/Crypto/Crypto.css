@@ -1,0 +1,17 @@
+.Crypto{
+    padding: 5px;
+    background-color: #5da423;
+    
+    border: 7px solid #61dafb;
+}
+.Crypto .title{
+background: #960;
+border: 7px solid #843
+
+
+
+}
+.Crypto .Dollar{
+    background-color: #787878;
+    border: 7px solid rgb(0, 229, 255);
+}
