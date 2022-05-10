@@ -12,10 +12,17 @@ class Crypto extends Component {
         const {target:{value}} = e;
 
         this.setState({
-            dollars: value
-        })
+            dollars: Number(e.target.value)
+        });
     }
-
+    shouldComponentUpdate(props, state) {
+        if(state.dollars % 10 === 0){
+            return true;
+        }
+        return false;
+        //return !(state.dollars % 10);
+        //return state.dollars % 10 === 0;
+    }
     handleOnSubmit = e => {
         e.preventDefault();
      if(this.state.dollars.trim() === '') {
@@ -41,17 +48,17 @@ class Crypto extends Component {
    return (
    <div className="Crypto">
        <font color="blue"><h1 className="title">Crypto Coins</h1></font>
-       <font color="orange"><p className="Dollar">Dolares a invertir</p></font>
+       <font color="orange"><p className="Dollar">Monedas = <strong>{this.state.dollars/10}</strong>.coins</p></font>
        <form onSubmit={this.handleOnSubmit}>
             <input
-                type = "number"
-                value = {this.state.dollars}
-                onChange = {this.handleOnChange}
+            placeholder='0'
+             onChange={this.handleOnChange}
+             type="number"
             />
         </form>
         
 
-        <font color="red"><p>Precio de la Crypto moneda 10 Dolares</p></font>
+        <font color="red"><p className="Mensaje">Precio de la Crypto moneda 10 Dolares</p></font>
         
    </div>
     

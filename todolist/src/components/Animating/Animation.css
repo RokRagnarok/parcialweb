@@ -1,0 +1,19 @@
+.Animation{
+background-color: red;
+
+}
+.Animation .transition{
+transition :all 4s ease 1s;
+color: #fff;
+padding-bottom: 10px;
+
+
+}
+
+.Animation .transition.show{
+    padding-bottom: 200px;
+    background-color: rgb(0, 0, 0);
+    padding-bottom: 200px;
+
+    
+}
