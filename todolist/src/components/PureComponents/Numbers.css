@@ -1,0 +1,53 @@
+.Numbers {
+    padding: 30px;
+    background-color: rgb(255, 0, 0);
+}
+
+.Numbers input[type=number]::-webkit-inner-spin-button
+{
+    background-color: aquamarine;
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.Numbers input {
+    height:100px;
+    width:100px;
+    background:#04ff11;
+    -moz-border-radius:50px;
+    -webkit-border-radius:50px;
+    border-radius:50px;
+    font-size:120;
+    padding: auto;
+    outline: none;
+    border: 1px solid rgb(0, 118, 59);
+}
+
+
+.Numbers ul {
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    width: 159px;
+    font-size: 20px;
+}
+
+.Numbers ul li {
+    border-top: 1px solid #2600ff;
+    border-left: 1px solid rgb(229, 255, 0);
+    border-right: 1px solid #2dfc09;
+    padding: 40px;
+    background-color:rgb(0, 0, 255);
+}
+
+.Numbers ul li:first-child {
+background-color: red;
+background-attachment: fixed;
+shape-margin: 23px;
+
+    border-top: none;
+}
+
+.Numbers ul li:last-child {
+    border-bottom: 1px solid rgb(255, 0, 0);
+}

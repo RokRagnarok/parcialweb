@@ -34,7 +34,7 @@ class Anim extends Component {
                 id="fade"
                 className = {this.state.show? 'transition show': 'transition'}
                 >
-                 este texto se va
+                 Hola
                 </div>
             </div>
         );
