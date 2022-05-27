@@ -2,8 +2,11 @@ import React, {Component} from 'react';
 import './Timer.css';
 
 class Timer extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
+        this.state = {
+            show: false,
+        }
 
         //Initial State
         this.state = {
@@ -19,12 +22,15 @@ class Timer extends Component {
             defaultTime: 1500, // 25min
             shortBreak: 300, // 5min
             longBreak: 900, // 15min
+            pause: 0, //, //
+            detener: stop
+            
         }
     }
-
+  
     componentDidMount() {
 
-        //Establece tiempo por defecto cuando el componente sea montado
+            //Establece tiempo por defecto cuando el componente sea montado
         this.setDefaultTime()
     }
 
@@ -39,17 +45,32 @@ class Timer extends Component {
         this.setState({
             alert: {
                 type: 'work',
-                message: 'WORKING!'
+                message: 'Corriendo'
             }
         })
         this.setTime(this.times.defaultTime);
     }
-
+  setTimePause = () => {
+    this.setState({
+        alert: {
+         type: 'pause',
+         message: 'pause'
+        }
+    })
+     this.setTime(this.times.pause);
+  }
+  setTimeStop = () => {
+      this.setState({
+          type: 'stop',
+          message: 'detenido'
+      })
+      this.setTime(this.times.stop);
+  }
     setTimeForShortBreak = () => {
         this.setState({
             alert: {
                 type: 'shortBreak',
-                message: 'Taking a Short Break!'
+                message: 'Tomemos un pequeño descanso'
             }
         })
         this.setTime(this.times.shortBreak);
@@ -59,13 +80,12 @@ class Timer extends Component {
         this.setState({
             alert: {
                 type: 'longBreak',
-                message: 'Taking a Long Break!'
+                message: 'Luego de un largo rato'
             }
         });
 
         this.setTime(this.times.longBreak);
     }
-    
 
     setTime = (newTime) => {
         this.restartInterval();
@@ -73,7 +93,6 @@ class Timer extends Component {
             time: newTime,
         })
     }
-
     restartInterval = () => {
         clearInterval(this.interval);
 
@@ -95,6 +114,7 @@ class Timer extends Component {
             
         }
     }
+
    displayTimer(seconds){
     const m = Math.floor(seconds/60);
     const s = seconds%60;
@@ -126,26 +146,42 @@ class Timer extends Component {
                         className= "start"
                         onClick= {this.setTimeForWork}
                     >
-                        Start Working
+                        inicia
                     </button>
 
                     <button
                         className= "short"
                         onClick= {this.setTimeForShortBreak}
                     >
-                        Short Break
+                        pequeño descanso
                     </button>
 
                     <button
                         className= "long"
                         onClick= {this.setTimeForLongBreak}
                     >
-                        Long Break
+                        largo descanso
                     </button>
+
+
+                  
                 </div>
+              
+
+                <button className = "Detener"
+                onClick = {this.setTimeStop}
+                >
+
+                  stop
+                </button>
+                <button className = "pausa"
+                onClick = {this.setTimePause}
                 
-                
+                >
+                    pausa
+                </button>
             </div>
+
         )
     }
 

@@ -16,9 +16,7 @@ class Calculator extends Component {
         }
 
     }
-    handleOnChange = e => {
 
-    }
     handleNumberChange = e => {
         const {target: {value}} = e;
         const numbers = Array.from(value);
@@ -37,7 +35,10 @@ class Calculator extends Component {
         })
     }
     operation = e => {
-
+        const result = numbers.reduce((a, b) => Number(a) + Number(b), 0);
+        const resta = numbers.reduce((a, b) => Number(a) - Number(b), 0);
+        const divisor = numbers.reduce((a, b) => Number(a)/ Number(b), 0);
+        const multiplication = numbers.reduce((a, b) => Number(a)* Number(b), 0);
     }
 
 

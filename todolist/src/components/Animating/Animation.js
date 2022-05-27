@@ -27,7 +27,8 @@ class Animation extends Component {
     render() {
         return (
             <div className="Animation">
-                <button onClick={this.toggleCollapse}>
+                <button onClick={this.toggleCollapse}
+                id="fade" >
                     {this.state.show ? 'Collapse' : 'Expand'}
                     
                 </button>
