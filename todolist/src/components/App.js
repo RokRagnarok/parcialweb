@@ -14,6 +14,7 @@ import Calculator from '../Calculator/Calculator';
 import Calcula from '../Calculator/Calcula';
 //import tImer from '../Examen/tImer';
 import Person from '../Forms/Person';
+import Popup from 'react-popup';
 function App() {
   return (
     <div className="App">
@@ -21,6 +22,7 @@ function App() {
       <Content >
         <Person/>
       </Content>
+      <Popup/>
       <Footer />
     </div>
   );
